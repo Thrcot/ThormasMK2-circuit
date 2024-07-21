@@ -1,0 +1,93 @@
+
+(rules PCB Main
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 7853)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.5)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.7)
+    )
+  )
+  (rule
+    (width 127.0)
+    (clear 127.0)
+    (clear 63.5 (type smd_to_turn_gap))
+    (clear 31.8 (type smd_smd))
+  )
+  (padstack "Via[0-1]_500:400_um"
+    (shape
+      (circle F.Cu 500.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 500.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_500:400_um" "Via[0-1]_500:400_um" default
+  )
+  (via 
+    "Via[0-1]_500:400_um-kicad_default" "Via[0-1]_500:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_500:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_500:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 127.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "unconnected-(IC1-D4-Pad5)" VDD "unconnected-(IC1-D10-Pad11)" "unconnected-(IC1-VUSB-Pad14)" "unconnected-(IC1-D5-Pad6)" "unconnected-(IC1-D1-Pad2)" "unconnected-(IC1-D2-Pad3)" "/USART3_TXD"
+    "unconnected-(IC1-D0-Pad1)" "unconnected-(IC1-D3-Pad4)" GND "/USART3_RXD" "/LED_Seed" "/ST-LINK/BOOT0" "/I2C2_SDA" "Net-(D3-A)"
+    "Net-(D5-A)" "Net-(D6-A)" "Net-(D7-A)" "Net-(U3-PC14)" "Net-(U3-PB12)" "Net-(D4-A)" "Net-(U3-PC13)" /BOOT0
+    "T_DIO" "Net-(J9-CC1)" /BOOT1 "Net-(D12-A)" "/LED_Debug2" "Net-(D2-A)" +5V "Net-(D1-A)"
+    VDDA "/LED_Debug1" "Net-(D11-A)" "/SW_3" "/SW_2" "/SW_1" "Net-(J9-CC2)" "Net-(Q1-E)"
+    "/ST-LINK/D+" "Net-(Q1-B)" "/SW_START" "/ST-LINK/U_RENUMn" "/ST-LINK/PA0" "Net-(D13-A)" "USART1_TXD" "Net-(D14-K)"
+    "Net-(D8-A)" "Net-(D10-A)" "Net-(D9-A)" "USART1_RXD" "/I2C2_SCL" "/TIM3_CH1" /2 "unconnected-(U1-PB15-Pad36)"
+    "/USART6_RXD" /7 "/TIM4_CH1" "/TIM3_CH2" "/OSC_IN" "T_CLK" "unconnected-(U1-PC5-Pad25)" "/TIM4_CH2"
+    "/USART2_TXD" "/BALL_IN" "unconnected-(U1-PA11-Pad44)" "/TIM4_CH4" "/OSC_OUT" /6 "unconnected-(U1-PB12-Pad33)" "/TIM5_CH2"
+    /8 "/TIM5_CH1" "/USART6_TXD" "/TIM3_CH4" /4 "/TIM4_CH3" /1 "Net-(U1-VCAP_1)"
+    "/TIM3_CH3" /SHOT "/USART5_RXD" /3 /5 "unconnected-(U1-PB14-Pad35)" "unconnected-(U1-PB13-Pad34)" /DIN
+    "/USART2_RXD" "/USART5_TXD" "unconnected-(U3-PB4-Pad40)" "/ST-LINK/STA_LED" "/ST-LINK/MCO" "/ST-LINK/D-" "unconnected-(U3-PB15-Pad28)" "/ST-LINK/OSC_OUT"
+    "/ST-LINK/T_SWO" "unconnected-(U3-PB1-Pad19)" "/ST-LINK/T_TXD" "/ST-LINK/T_JTSK" "unconnected-(U3-PB10-Pad21)" "unconnected-(U3-PB6-Pad42)" "unconnected-(U3-PB5-Pad41)" "/ST-LINK/T_JTDI"
+    "/ST-LINK/T_RXD" "/ST-LINK/T_JTDO" "unconnected-(U3-PB3-Pad39)" "unconnected-(U3-PB11-Pad22)" "unconnected-(U3-PC15-Pad4)" "unconnected-(U3-PB9-Pad46)" "unconnected-(U3-PB2-Pad20)" "unconnected-(U3-PA1-Pad11)"
+    "/ST-LINK/SWDIO" "unconnected-(U3-PB8-Pad45)" "/ST-LINK/OSC_IN" "unconnected-(U3-PA4-Pad14)" "unconnected-(U3-PB7-Pad43)" "/ST-LINK/SWCLK" "Net-(F1-Pad1)" "unconnected-(U4-DAC_L-Pad5)"
+    "unconnected-(U4-ADKEY1-Pad13)" "unconnected-(U4-ADKEY2-Pad12)" /Speaker+ "unconnected-(U4-IO2-Pad14)" "unconnected-(U4-IO1-Pad16)" "unconnected-(U4-DAC_R-Pad4)" "/Speaker-" "unconnected-(U4-USB+-Pad11)"
+    "unconnected-(U4-USB--Pad10)" "unconnected-(U4-Busy-Pad9)" "/ST-LINK/U_D+" "/ST-LINK/U_D-" "unconnected-(J9-SBU2-PadB8)" "unconnected-(J9-SBU1-PadA8)" "unconnected-(J2-Pin_10-Pad10)" "unconnected-(IC1-D9-Pad10)"
+    "T_NRST" "/ST-LINK/NRST"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 127.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

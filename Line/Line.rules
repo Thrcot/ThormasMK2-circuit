@@ -1,0 +1,91 @@
+
+(rules PCB Line
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 9)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clear 127.0)
+    (clear 100.0 (type smd_to_turn_gap))
+    (clear 31.8 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND 14 /13Y 15 /15Y 16 /16Y /17Y
+    18 +3.3V 17 13 /14Y /18Y /5Y 4
+    /2Y /1Y /6Y /4Y 3 2 6 /3Y
+    1 5 /10Y /9Y /12Y /11Y 12 /8Y
+    10 7 11 /7Y 9 8 "Net-(D14-A)" "Net-(Q1-E)"
+    19 "Net-(Q18-E)" "Net-(Q17-E)" "Net-(D17-A)" "Net-(Q16-E)" "Net-(D16-A)" "Net-(Q15-E)" "Net-(D15-A)"
+    "Net-(Q14-E)" "Net-(Q9-E)" "Net-(Q13-E)" "Net-(D13-A)" "Net-(Q12-E)" "Net-(D12-A)" "Net-(Q11-E)" "Net-(D11-A)"
+    "Net-(Q10-E)" "Net-(D10-A)" "Net-(D18-A)" "Net-(D1-A)" "Net-(D9-A)" "Net-(Q8-E)" "Net-(D8-A)" "Net-(Q7-E)"
+    "Net-(D7-A)" "Net-(Q6-E)" "Net-(D6-A)" "Net-(Q5-E)" "Net-(D5-A)" "Net-(Q4-E)" "Net-(D4-A)" "Net-(Q3-E)"
+    "Net-(D3-A)" "Net-(Q2-E)" "Net-(D2-A)" "Net-(D19-A)" "Net-(D20-A)" "Net-(D21-A)" "Net-(D22-A)" "Net-(D23-A)"
+    "Net-(D24-A)" "Net-(D25-A)" "Net-(D26-A)" "Net-(D27-A)" "Net-(D28-A)" "Net-(D29-A)" "Net-(D30-A)" "Net-(D31-A)"
+    "Net-(D32-A)" "Net-(D33-A)" "Net-(D34-A)" "Net-(D35-A)" "Net-(D36-A)" "Net-(D37-A)" /BOOT0 "Net-(D38-A)"
+    "/D_LED" /NRST "unconnected-(RV1-Pad3)" "unconnected-(RV2-Pad3)" "unconnected-(RV3-Pad3)" "unconnected-(RV4-Pad3)" "unconnected-(RV5-Pad3)" "unconnected-(RV6-Pad3)"
+    "unconnected-(RV7-Pad3)" "unconnected-(RV8-Pad3)" "unconnected-(RV9-Pad3)" "unconnected-(RV10-Pad3)" "unconnected-(RV11-Pad3)" "unconnected-(RV12-Pad3)" "unconnected-(RV13-Pad3)" "unconnected-(RV14-Pad3)"
+    "unconnected-(RV15-Pad3)" "unconnected-(RV16-Pad3)" "unconnected-(RV17-Pad3)" "unconnected-(RV18-Pad3)" +5V "USART1_TXD" "/OSC_IN" "USART1_RXD"
+    "/OSC_OUT" /SWCLK /SWDIO VDD
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

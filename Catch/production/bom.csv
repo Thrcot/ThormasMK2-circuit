@@ -1,0 +1,7 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+D1,LED_D5.0mm,1,LED,
+J1,JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,1,Conn_01x03,
+Q1,LED_D3.0mm_Clear,1,Q_Photo_NPN,
+R1,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,1,75R,
+R2,0603,1,2.2k,
+RV1,Potentiometer_Bourns_TC33X_Vertical,1,10k,
