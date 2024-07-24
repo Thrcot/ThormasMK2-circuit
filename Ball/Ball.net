@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "C:\\Users\\zukki\\Documents\\KiCad\\8.0\\projects\\Thrcot\\ThormasMk2,PercyMk2\\Ball\\Ball.kicad_sch")
-    (date "2024-04-14T19:20:26+0900")
+    (date "2024-07-25T05:09:43+0900")
     (tool "Eeschema 8.0.1")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
